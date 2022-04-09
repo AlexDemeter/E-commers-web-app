@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>E-commerce product page</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="row naw-row">
+                <div class="col nav-right">
+                    <ul>
+                        <img src="./images/logo.svg" alt="">
+                        <li>Collections</li>
+                        <li>Men</li>
+                        <li>Women</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+                <div class="left-menu-cont">
+                    <div class="exit-cont">
+                        <img src="./images/icon-close.svg" alt="" onclick="close_menu()">
+                    </div>
+                    <div class="menu-items">
+                        <ul class="ham-ul">
+                            <li>Collections</li>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>About</li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="responsive-ham">
+                    <ul>
+                        <img src="./images/icon-menu.svg" alt="" class="ham" onclick="menu()">
+                        <img src="./images/logo.svg" class="logo" alt="">
+                    </ul>
+                </div>
+                <div class="col nav-left">
+                    <ul>
+                        <li><img src="./images/icon-cart.svg" style="cursor: pointer;" id="cart" alt=""
+                                onclick="list_cart()">
+                            <p class="cart-count"></p>
+                        </li>
+                        <div class="container cart-cont" id="cart-cont"></div>
+                        <li><img src="./images/image-avatar.png" alt="" class="profile-img"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container section-cont">
+            <div class="row product-row">
+                <div class="col images-col">
+                    <div class="row prod">
+                        <img src="./images/icon-previous.svg" alt="" class="step" onclick="prev_mobile()">
+                        <img src="./images/image-product-1.jpg" alt="" class="img-fluid product-img"
+                            style="cursor: pointer;" onclick="openpop()">
+                        <img src="./images/icon-next.svg" alt="" class="step" onclick="next_mobile()">
+                    </div>
+                    <div class="row tumbnail-items">
+                        <img src="./images/image-product-1-thumbnail.jpg" alt="" onclick="openpop()"
+                            style="cursor: pointer;" class="img-fluid">
+                        <img src="./images/image-product-2-thumbnail.jpg" alt="" onclick="openpop()"
+                            style="cursor: pointer;" class="img-fluid">
+                        <img src="./images/image-product-3-thumbnail.jpg" alt="" onclick="openpop()"
+                            style="cursor: pointer;" class="img-fluid">
+                        <img src="./images/image-product-4-thumbnail.jpg" alt="" onclick="openpop()"
+                            style="cursor: pointer;" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col desc-cont">
+                    <div class="row">
+                        <div class="col">
+                            <h5>SNEAKER COMPANY</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h1>Fall Limited Edition Sneakers</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <p>These low-profile sneakers are your perfect casual wear
+                                <br>
+                                companion. Featuring a durable rubber outer sole, they'll
+                                <br>
+                                withstand everything the weather can offer.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col action-pc">
+                            <h3>$</h3>
+                            <h3 id="price">125.00</h3>
+                            <h5>-50%</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col basic-price">
+                            <h6>$250.00</h6>
+                        </div>
+                    </div>
+                    <div class="row to-cart-row">
+                        <div class="col counter-items">
+                            <button class="btn-count counter-minus">-</button>
+                            <p class="counter-display">(..)</p>
+                            <button class="btn-count counter-plus">+</button>
+                        </div>
+                        <div class="col">
+                            <button class="add-btn" onclick="add_cart()"><img src="./images/icon-cart.svg"
+                                    class="cart-logo" alt="">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="popupcont">
+        <div class="row">
+            <div class="col exit">
+                <img src="./images/icon-close.svg" alt="" style="cursor: pointer;" onclick="closepop()">
+            </div>
+        </div>
+        <div class="row wiew-row">
+            <div class="col">
+                <img src="./images/icon-previous.svg" alt="" id="prew" style="cursor: pointer;" onclick="prev()">
+            </div>
+            <div class="col">
+                <img src="./images/image-product-1.jpg" alt="" class="img-popup" id="actual">
+            </div>
+            <div class="col">
+                <img src="./images/icon-next.svg" alt="" id="next" style="cursor: pointer;" onclick="next()">
+            </div>
+        </div>
+        <div class="row prew-row">
+            <div class="col tumbnail-items">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="" class="active" id="img1">
+                <img src="./images/image-product-2-thumbnail.jpg" alt="" id="img2">
+                <img src="./images/image-product-3-thumbnail.jpg" alt="" id="img3">
+                <img src="./images/image-product-4-thumbnail.jpg" alt="" id="img4">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
